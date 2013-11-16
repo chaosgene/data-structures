@@ -1,0 +1,25 @@
+Christopher Zhang
+czhang44@binghamton.edu
+Lab05
+Professor Hartog
+8 October 2013
+
+1
+start runs debugged program until the beginning of main procedure
+run starts debugged program and will go through the entire program until the error is found
+
+2
+to add the breakpoint in a function (say main), use the statement
+break main
+to add the breakpoint in a file at a certain line number, use the statement
+break Driver.cpp:3 (to stop the program at line 3 of Driver)
+
+3
+the continue command resumes execution of the program until the next breakpoint or the error (seg fault, etc.) is reached
+
+4
+backtrace tells what current function we are currently in. With nested functions, there will be a lot of frames that will currently be sitting on the stack. Frames are where automatic variables for the function are stored so it will be very easy to have a lot of unneeded information appear with a backtrace command because of Object-Oriented Programming's tenet of encapsulation and helper functions. Recursion can also generate multiple function calls. ALso, with multiple errors, it will also be difficult to pinpoint one error at a time with all the frames on the screen at once.
+
+5
+print displays the value stored inside a certain variable.
+info locals shows all the local variables on a current stack frame.
