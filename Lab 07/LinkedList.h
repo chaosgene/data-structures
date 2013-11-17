@@ -13,7 +13,6 @@ template <class T>
 class LinkedList
 {
 	private:
-			
 	public:
 		// List's function members
 		// Construction		

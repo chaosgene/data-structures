@@ -93,7 +93,6 @@ int main(){
 	
 	DynamicArray* p = new DynamicArray(12, 3.14f);
 	
-	
 	if(p->size() != 12) {return -14;}
 	if(p->capacity() != 12) {return -15;}
 	

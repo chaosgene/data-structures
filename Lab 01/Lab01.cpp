@@ -178,17 +178,17 @@ void Lab01::question6()
 
 void Lab01::sizeofUse()
 {
-/*
-Sizeof, when compiled, determines the sizes by bytes of a variable.
-It tell us how many bytes of memory have been allocated to store something of this type. 
-Pointers all contain 8 bytes because they are memory addresses.
-This is the same with heap-allocated arrays which relies on pointers.
-Stack-allocated arrays take up as many bytes as they have items times the space
-needed for each item.
-Therefore, sizeof is a very low-level indicator of how much memory is being used.
-Extra calculations will be necessary to find the actual number of elements in an array, for example 
-(knowing the type and amount of bytes one item of such type needs is a start). 
-*/
+	/*
+	Sizeof, when compiled, determines the sizes by bytes of a variable.
+	It tell us how many bytes of memory have been allocated to store something of this type. 
+	Pointers all contain 8 bytes because they are memory addresses.
+	This is the same with heap-allocated arrays which relies on pointers.
+	Stack-allocated arrays take up as many bytes as they have items times the space
+	needed for each item.
+	Therefore, sizeof is a very low-level indicator of how much memory is being used.
+	Extra calculations will be necessary to find the actual number of elements in an array, for example 
+	(knowing the type and amount of bytes one item of such type needs is a start). 
+	*/
 	cout << "sizeof int" << endl;
 	int a;
 	a = 5;

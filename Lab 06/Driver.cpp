@@ -132,8 +132,6 @@ int main(){
 
 	cout << endl << "This took " << ((float)finish - (float)start) / (float)CLOCKS_PER_SEC;
 	cout << " seconds" << endl;
-
-
-
+	
 	return 0;
 }

@@ -4,9 +4,7 @@
 #include <ctime>
 #include <vector>
 #include <algorithm>
-
 using namespace std;
-
 
 int main(){
 	//declare a few time points
@@ -25,11 +23,7 @@ int main(){
 		long binarysearch_duration = 0;
 		long reverse_duration = 0;
 		long stablesort_duration = 0;
-		
-
 	
-		//printout to help decode output
-		//cout << "duration: " << sort_duration << endl;
 		//For the iterations
 		for (int i = 0; i < 100; i++)
 		{
@@ -101,7 +95,6 @@ int main(){
 		cout << "Binary Search average in nanoseconds: " << binarysearch_duration / ((long) 100) << endl;
 		cout << "Reverse average in nanoseconds: " << reverse_duration / ((long) 100) << endl;
 		cout << "Stable Sort average in nanoseconds: " << stablesort_duration / ((long) 100) << endl << endl;
-
 	}
 	return 0;
 }

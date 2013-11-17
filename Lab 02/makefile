@@ -9,4 +9,3 @@ DynamicArray.o : DynamicArray.cpp
 	$(COMPILER) $(FLAGS) -c DynamicArray.cpp	
 clean:
 	rm -rf *.o $(OUTPUT_NAME)
-

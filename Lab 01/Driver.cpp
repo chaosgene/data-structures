@@ -248,8 +248,7 @@ int main(int argc, char** argv)
 		}
 	}
 	std::cout << "QUESTION 4 OKAY" << std::endl;
-
-
+	
 	std::cout << std::endl << "Testing for question 5." << std::endl;
 	{
 		lab1.question5();
@@ -272,6 +271,4 @@ int main(int argc, char** argv)
 	{
 		lab1.sizeofUse();
 	}
-
-
 }

@@ -16,4 +16,3 @@ Driver.o : Driver.cpp
 	$(COMPILER) $(FLAGS) -c Driver.cpp
 clean:
 	rm -rf *.o $(OUTPUT_NAME1) $(OUTPUT_NAME2)
-

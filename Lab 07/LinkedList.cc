@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstdlib>
-
 using namespace std;
 
 // Constructor
@@ -8,7 +7,6 @@ template <class T>
 LinkedList<T>::LinkedList()
 : first(0), last(0), mySize(0)
 {
-
 }
 
 // Copy Constructor
@@ -26,7 +24,6 @@ LinkedList<T>::LinkedList(const LinkedList<T> &original)
 	}
 
 }
-
 
 // Assignment Operator
 template <class T>
@@ -51,7 +48,6 @@ const LinkedList<T> & LinkedList<T>:: operator=(const LinkedList<T> & rhs)
 	}	
 	return *this;
 }
-
 
 // Destructor
 template <class T>

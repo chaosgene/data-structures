@@ -3,12 +3,6 @@
 #include <sstream>
 using namespace std;
 
-/*
-Name: Christopher Zhang
-Lab: 04
-Section: A51
-*/
-
 int Lab04::replaceStrings(string& str, const string& newWord, const string& to) {
 
 	// don't change if it is followed by punctuation
@@ -91,8 +85,6 @@ int Lab04::replaceChars(string& str, const string& newWord, const string& to) {
 	}
 	return replacements;
 }
-
-
 
 int Lab04::countWords(std::string str)
 {

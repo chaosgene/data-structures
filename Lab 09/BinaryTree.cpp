@@ -423,4 +423,3 @@ bool BinaryTree::is_symmetric_aux(BinNode * lChild, BinNode * rChild)
 		 (is_symmetric_aux((lChild->left), (rChild->right))) &&
 		 (is_symmetric_aux((lChild->right), (rChild->left))));
 }
-

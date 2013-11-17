@@ -16,6 +16,4 @@ class Random{
 		int* rand_data;
 };
 
-
-
 #endif //RANDOM_H

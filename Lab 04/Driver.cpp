@@ -5,10 +5,7 @@
 using namespace std;
 int main(int argc, char* argv[])
 {
-	Lab04 lab4;
-	
-	
-	
+	Lab04 lab4;	
 	std::string currLine;
 	ifstream mybook(argv[1]);
 	ofstream newbook(argv[2]);

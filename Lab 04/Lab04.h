@@ -1,11 +1,6 @@
 #ifndef LAB04_H
 #define LAB04_H
 
-/*
-Name: Christopher Zhang
-Lab: 04
-Section: A51
-*/
 class Lab04{
 
 private: 
