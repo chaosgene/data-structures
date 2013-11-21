@@ -1,5 +1,5 @@
-size		sort		binary_search			reverse		stable_sort	
-10 		1700		320				480		2340
+size		sort		binary_search	reverse		stable_sort
+10 			1700		320				480			2340
 100 		28400		580				3070		34760
 1000		204190		370				14540		249510
 10000		2483250		440				130810		2897240
