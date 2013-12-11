@@ -11,15 +11,15 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-/*
-Requirements
-1: Display line
-2: Display digit distribution for line
-3: Display # of integer lines.
-4: Display # of decimal lines.
-5: Display distribution of first digit[0-9]
-6: Sort and display line(s) with the greatest, nonzero count for an input collection of digits.
-*/
+    /*
+        Requirements
+        1: Display line
+        2: Display digit distribution for line
+        3: Display # of integer lines.
+        4: Display # of decimal lines.
+        5: Display distribution of first digit[0-9]
+        6: Sort and display line(s) with the greatest, nonzero count for an input collection of digits.
+    */
 	//const bool DEBUG = 0;
 	string line;
 	LinkedLines ddc;
@@ -30,11 +30,7 @@ Requirements
 
 	// START TIMER
 
-	// Declare time points
-	chrono::monotonic_clock::time_point start, finish;
-	// Declare holder for nanosecs
-	chrono::milliseconds elapsed;
-	start = chrono::monotonic_clock::now();
+    auto start = chrono::system_clock::now();
 
 	if (inputFile.is_open())
 	{
@@ -134,9 +130,9 @@ Requirements
 			ddc.findLinesWithMostOcc(v);	
 		}
 	}
-	finish = chrono::monotonic_clock::now();
-	elapsed = chrono::duration_cast<chrono::milliseconds>(finish-start);
-	long duration = elapsed.count();
-	cout << "Execution time: " << duration << "ms" << endl;
+    auto end = chrono::system_clock::now();
+    auto elapsed =
+        chrono::duration_cast<chrono::milliseconds>(end - start);
+	cout << "Execution time: " << elapsed.count() << "ms" << endl;
 	return 0;
 }
