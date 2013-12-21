@@ -12,4 +12,4 @@ Text: ADTs and Data Structures by Larry Nyhoff
 Note: Programming done in terminal using vim as an editing tool.
 
 *Following rules (Watson Academic Honesty Policy) apply for students and other members of Binghamton University.
-http://www2.binghamton.edu/watson/about/academic-honesty.html
+http://goo.gl/XvMLMi
