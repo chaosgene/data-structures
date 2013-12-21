@@ -5,7 +5,7 @@ All code authored by Christopher Zhang (@chrzhang on GitHub), supplied as sample
 
 Implementations of various data structures and algorithms using C++. 
 
-Includes assignment course-work for Binghamton University course in data structures and algorithms.
+Includes assignment course-work for Binghamton University coursework in data structures and algorithms.
 
 *Following rules (Watson Academic Honesty Policy) apply for students and other members of Binghamton University.
 http://goo.gl/XvMLMi
