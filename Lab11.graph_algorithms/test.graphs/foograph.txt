@@ -1,0 +1,16 @@
+10
+Yoda, 1337.4
+Han Solo, 980.223
+Vader, -980.224
+Maul, 76.4
+Akbar, 80.5
+Leia, 1
+Padme, 92.22
+R2D2, 31.2
+C3PO, 11.7
+Chewbacca, 21
+a, b, c
+a, b
+ab
+Maul, Akbar, -10
+Maul, Leia, 10
