@@ -104,8 +104,8 @@ class Graph {
 		Graph();
 		//Delete
 		~Graph();
-        //Clear
-        void clear();
+        	//Clear
+        	void clear();
 		//Read A Graph From A File
 		void readFromFile(std::string file);
 		//Write A Graph To A File
