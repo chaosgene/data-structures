@@ -73,32 +73,32 @@ class Graph {
 		std::list<EdgeNode *> edges;
 		//Put your private methods here
 		// Connect two vertices
-        void connect(std::vector<Vertex *>::iterator it,
-                std::vector<Vertex *>::iterator it2, float weight);
-        // Check if string is valid as first line of input file
-        bool isValidFirstLine(const std::string &line);
-        // Check if string is valid as line representing a vertex of input file
-        bool isValidVertexLine(const std::string &line);
-        // Check if string is valid as line representing edge of input file
-        bool isValidEdgeLine(const std::string &line);
-        // Check if graph is connected
-        bool isConnected();
-        // Trim
-        void trim(std::string &vertexName);
-        // Deepen
-        void deepen(Vertex * v, float & deviance, const float TARGET, 
-                        float & devianceThreshold,
-                        std::list<std::list<Vertex *>> &paths);
-        // Deepen recursive 
-        bool deepenAux(std::list<std::list<Vertex *>> & paths,
-                        std::vector<bool> & visited,
-                        Vertex * v,
-                        float & newDeviance,
-                        const float & oldDeviance,
-                        float currentSum,
-                        std::list<Vertex *> & currentPath,
-                        const float & TARGET,
-                        float & devianceTreshold);
+        	void connect(std::vector<Vertex *>::iterator it,
+                	std::vector<Vertex *>::iterator it2, float weight);
+        	// Check if string is valid as first line of input file
+        	bool isValidFirstLine(const std::string &line);
+        	// Check if string is valid as line representing a vertex of input file
+        	bool isValidVertexLine(const std::string &line);
+        	// Check if string is valid as line representing edge of input file
+        	bool isValidEdgeLine(const std::string &line);
+        	// Check if graph is connected
+        	bool isConnected();
+        	// Trim
+        	void trim(std::string &vertexName);
+        	// Deepen
+        	void deepen(Vertex * v, float & deviance, const float TARGET, 
+                        	float & devianceThreshold,
+                        	std::list<std::list<Vertex *>> &paths);
+        	// Deepen recursive 
+        	bool deepenAux(std::list<std::list<Vertex *>> & paths,
+                        	std::vector<bool> & visited,
+                        	Vertex * v,
+                        	float & newDeviance,
+                        	const float & oldDeviance,
+                        	float currentSum,
+                        	std::list<Vertex *> & currentPath,
+                        	const float & TARGET,
+                        	float & devianceTreshold);
 	public:
 		//Construct
 		Graph();
