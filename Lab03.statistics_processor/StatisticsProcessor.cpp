@@ -3,29 +3,24 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+
 using namespace std;
-/*
-Name: Christopher Zhang
-Lab: 03
-Section: A51
-*/
+
 /*
 	Default Constructor
 	Create an empty statistics processor that takes no data.
 */
-StatisticsProcessor::StatisticsProcessor()
-{	
+StatisticsProcessor::StatisticsProcessor() {	
 	d = new DynamicArray;
 }
+
 /*
 	Copy Constructor
 */
-StatisticsProcessor::StatisticsProcessor(const StatisticsProcessor &s)
-{
+StatisticsProcessor::StatisticsProcessor(const StatisticsProcessor &s) {
 	d = new DynamicArray;
 	//cout << "copying from" << endl;
-	for (int i = 0; i < s.d->size(); i++)
-	{
+	for (int i = 0; i < s.d->size(); i++) {
 		d->push_back(s.d->getValueAtIndex(i));
 	}
 }
@@ -33,8 +28,7 @@ StatisticsProcessor::StatisticsProcessor(const StatisticsProcessor &s)
 /*
 	Assignment Operator
 */
-StatisticsProcessor& StatisticsProcessor::operator=(const StatisticsProcessor &rhs)
-{
+StatisticsProcessor& StatisticsProcessor::operator=(const StatisticsProcessor &rhs) {
 	if (this != &rhs) // Alias test
 	{
 		delete d;
