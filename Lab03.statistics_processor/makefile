@@ -5,9 +5,11 @@ OUTPUT_NAME2 = Lab03Test
 all: $(OUTPUT_NAME1) $(OUTPUT_NAME2)
 
 $(OUTPUT_NAME1): Driver.o StatisticsProcessor.o DynamicArray.o
-	$(COMPILER) $(FLAGS) -o $(OUTPUT_NAME1) Driver.o StatisticsProcessor.o DynamicArray.o
+	$(COMPILER) $(FLAGS) -o $(OUTPUT_NAME1) Driver.o StatisticsProcessor.o \
+    DynamicArray.o
 $(OUTPUT_NAME2): Tester.o StatisticsProcessor.o DynamicArray.o
-	$(COMPILER) $(FLAGS) -o $(OUTPUT_NAME2) Tester.o StatisticsProcessor.o DynamicArray.o
+	$(COMPILER) $(FLAGS) -o $(OUTPUT_NAME2) Tester.o StatisticsProcessor.o \
+    DynamicArray.o
 Tester.o : Tester.cpp
 	$(COMPILER) $(FLAGS) -c Tester.cpp
 Driver.o : Driver.cpp
