@@ -15,7 +15,7 @@ DynamicArray::DynamicArray(int size, Element e) {
 	arraySize = size;
 	arrayCapacity = size;
 	dynamicArray = new Element[arrayCapacity];
-	for (int i = 0; i < arraySize; i++)	{
+	for (int i = 0; i < arraySize; i++) {
 		dynamicArray[i] = e;
 	}
 }
