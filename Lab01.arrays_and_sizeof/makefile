@@ -9,4 +9,3 @@ Lab01.o : Lab01.cpp
 	$(COMPILER) $(FLAGS) -c Lab01.cpp	
 clean:
 	rm -rf *.o $(OUTPUT_NAME)
-

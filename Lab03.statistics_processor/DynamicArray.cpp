@@ -1,8 +1,8 @@
 #include <iostream>
 #include "DynamicArray.h"
-#include <cstring>
 #include <stdexcept> 
 #include <math.h> 
+#include <map>
 
 using namespace std;
 
@@ -31,7 +31,6 @@ DynamicArray::DynamicArray(const DynamicArray& d) {
 		dynamicArray[i] = d.dynamicArray[i]; // Copy over old data
 	}
 }
-
 
 ostream& operator<<( ostream &output, const DynamicArray &d) { 
 	 for (int i = 0; i < d.arraySize; i++) {
@@ -65,21 +64,24 @@ void DynamicArray::push_back(Element e) {
 		}
 		delete [] dynamicArray; // Remove the old array (prevent memory leak)
 		dynamicArray = newArray;
-	}
-	else if (arraySize < arrayCapacity) {
-		dynamicArray[arraySize] = e; // With x items are in the array, the new item has an index of x
+        dynamicArray[arraySize] = e;
+        arraySize += 1;
+	} else if (arraySize < arrayCapacity) {
+		dynamicArray[arraySize] = e; 
 		arraySize += 1;
 	}
 }
 
 void DynamicArray::push_front(Element e) {
-	Element* newArray = new Element[arrayCapacity+1]; // Make a new array of x+1 capacity
+	Element* newArray = new Element[arrayCapacity+1]; 
 	newArray[0] = e; // Set the first element to the input
-	for (int i = 1; i < arrayCapacity; i++) {
-		newArray[i] = dynamicArray[i];
+	for (int i = 1; i <= arrayCapacity; i++) {
+		newArray[i] = dynamicArray[i-1];
 	}
 	delete [] dynamicArray;
 	dynamicArray = newArray;
+    arraySize++;
+    arrayCapacity++;
 }
 
 Element DynamicArray::pop_back() {
@@ -87,7 +89,7 @@ Element DynamicArray::pop_back() {
 		throw std::out_of_range ("Out of range.");
 	}
 	Element returnVal = dynamicArray[arraySize-1]; // Store the last value
-	Element* newArray = new Element[arrayCapacity]; // The updated array will have the original capacity
+	Element* newArray = new Element[arrayCapacity];
 	for (int i = 0; i < (arraySize-1); i++)	{
 			newArray[i] = dynamicArray[i];
 	}
@@ -115,32 +117,32 @@ bool DynamicArray::valid_index(int index) {
 	return ((index >= 0) && (index < arraySize));
 }
 
-int DynamicArray::size() {
+int DynamicArray::size() const {
 	return arraySize;
 }
 
-int DynamicArray::capacity() {
+int DynamicArray::capacity() const {
 	return arrayCapacity;
 }
 
-Element DynamicArray::getMin() {
+Element DynamicArray::getMin() const {
 	Element minVal;
 	if (arraySize == 0) {
 		return 0;
 	}
 	minVal = dynamicArray[0];
-	//cout << "min first set to " << minVal << endl;
-	for (int i = 1; i < arraySize; i++)	{
-		//cout << "\t Checking: " << dynamicArray[i] << endl;
+	cout << "min first set to " << minVal << endl;
+	for (int i = 0; i < arraySize; i++)	{
+		cout << "\t Checking: " << dynamicArray[i] << endl;
 		if (dynamicArray[i] < minVal) {
-			//cout << "This is less than" << minVal << endl;
+			cout << "This is less than" << minVal << endl;
 			minVal = dynamicArray[i];
 		}
 	}
 	return minVal;
 }
 
-Element DynamicArray::getMax() {
+Element DynamicArray::getMax() const {
 	Element maxVal;
 	if (arraySize == 0)	{
 		return 0;
@@ -157,7 +159,7 @@ Element DynamicArray::getMax() {
 	return maxVal;
 }
 
-float DynamicArray::getMean() {
+float DynamicArray::getMean() const {
 	if (arraySize == 0)	{
 		return 0;
 	}
@@ -168,16 +170,20 @@ float DynamicArray::getMean() {
 	return ((float)sum / (float)arraySize);
 }
 
-float DynamicArray::getSDev() {
+float DynamicArray::getSDev() const {
 	if (arraySize == 0)	{
 		return 0;
 	}
 	float mean = getMean();
+    //cout << "Mean: " << mean << endl;
 	float difference;
 	float sum;
 	for (int i = 0; i < arraySize; i++)	{
+        //cout << "Difference between " << dynamicArray[i] << " and " << mean << endl;
 		difference = ((float)dynamicArray[i]) - mean;
+        //cout << "is " << difference << endl;
 		sum += pow(difference, 2);
+        //cout << "added " << pow(difference, 2) << endl;
 	}
 	return pow((sum / arraySize), 0.5);
 }
@@ -186,26 +192,30 @@ int DynamicArray::getMode() const {
 	if (arraySize == 0) {
 		return 0;
 	}
-	int mode = dynamicArray[0];
-	int modeOcc = 0;
-	for (int i = 0; i < arraySize; i++)	{
-		// Going through each element of the array
-		int possibleMode = dynamicArray[i];
-		int numOcc = 0;
-		for (int j = 0; j < arraySize; j++)	{
-			if (dynamicArray[i] == possibleMode) {
-				numOcc+=1;
-			}
-		}
-		if (numOcc > modeOcc) {
-			mode = possibleMode;
-		}
-		else if (numOcc == modeOcc) {
-			if (possibleMode < mode) {
-				mode = possibleMode;
-			}
-		}
-	}
+    // Create an array of size getMax()
+    Element size = getMax();
+    Element counts[size+1];
+    for (int i = 0; i < size+1; ++i) {
+        counts[i] = 0;
+    }
+    //cout << "Created new array of counts." << endl;
+    //cout << "Highest index in counts is " << size << endl;
+    for (int i = 0; i < arraySize; ++i) {
+        //cout << "Looking at " << dynamicArray[i] << endl;
+        counts[dynamicArray[i]]++;
+        //cout << "incremented counts index " << dynamicArray[i] << endl;
+        //cout << "counter for that occurrence now: " << counts[dynamicArray[i]]
+        //<< endl;
+    }
+    int highestCount = counts[0];
+    int mode = -1;
+    for (int i = 0; i < size + 1; ++i) {
+        if (counts[i] > highestCount) {
+            highestCount = counts[i];
+            mode = i;
+        }
+    }
+    //delete [] counts;
 	return mode;
 }
 

@@ -26,7 +26,8 @@ class StatisticsProcessor{
 		~StatisticsProcessor();
 		
 		void loadData(std::string file_name);
-		friend std::istream& operator>>(std::istream &in, StatisticsProcessor &s);
+		friend std::istream& operator>>(std::istream &in,
+            StatisticsProcessor &s);
 		
 		bool empty();
 		void clear();
@@ -36,10 +37,9 @@ class StatisticsProcessor{
 		int computeRange();
 		float computeSDev();
 		int computeMode() const;
-		friend std::ostream& operator<<(std::ostream &out, StatisticsProcessor &s);
+		friend std::ostream& operator<<(std::ostream &out,
+            StatisticsProcessor &s);
 		void writeData(std::string file_name);
-		
-		
 };
 
 #endif //STATISTICS_PROCESSOR_H

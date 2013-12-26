@@ -37,13 +37,13 @@ class DynamicArray{
 		//Indicate whether or not the provided index is valid
 		bool valid_index(int index);
 		//Return size of array (num of elements currently in the array)
-		int size();
+		int size() const;
 		//Return capacity of array (num of elements array can currently hold)
-		int capacity();
-		Element getMin();
-		Element getMax();
-		float getMean();
-		float getSDev();
+		int capacity() const;
+		Element getMin() const;
+		Element getMax() const;
+		float getMean() const;
+		float getSDev() const;
 		Element getMode() const;
 		Element getValueAtIndex(int i);
 };

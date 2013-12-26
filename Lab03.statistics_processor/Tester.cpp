@@ -1,39 +1,40 @@
 #include "StatisticsProcessor.h"
 
-int main(void){
+int main(void) {
 
 	std::cout << "Making an empty object." << std::endl;
 	StatisticsProcessor st;
 
-	try{
+	try {
 		st.computeMin();
-	} catch (std::domain_error e){
+	} catch (std::domain_error e) {
 		std::cout << "Domain error -min- caught" << std::endl;
 	}
 
-	try{
+	try {
 		st.computeMax();
-	} catch (std::domain_error e){
+	} catch (std::domain_error e) {
 		std::cout << "Domain error -max- caught" << std::endl;
 	}
-	try{
+	try {
 		st.computeRange();
-	} catch (std::domain_error e){
+	} catch (std::domain_error e) {
 		std::cout << "Domain error -range- caught" << std::endl;
 	}
-	try{
+	try {
 		st.computeMean();
-	} catch (std::domain_error e){
+	} catch (std::domain_error e) {
 		std::cout << "Domain error -mean- caught" << std::endl;
 	}
-	try{
+	try {
 		st.computeSDev();
-	} catch (std::domain_error e){
+	} catch (std::domain_error e) {
 		std::cout << "Domain error -sdev- caught" << std::endl;
 	}
 	
 	std::cout << st << std::endl;
-	st.loadData("testdata");
+	st.loadData("testfiles\\testdata");
+    std::cout << st << std::endl;
 	
 	if(st.computeMin() != 2) { 
 		std::cout << "Min not computed correctly." << std::endl;
@@ -50,16 +51,25 @@ int main(void){
 	
 	std::cout << st << std::endl;
 	std::cout << "For testing purposes, do not add any data." << std::endl;
-	std::cout << "Select a letter or negative number as the number of elements we want to add." << std::endl;
+	std::cout << "Select a letter or negative number as the number of elements"
+                    << " we want to add." << std::endl;
 	std::cin >> st;
 	std::cout << st << std::endl;
 	
-	
-	if(st.computeSDev() != 2.0f){
-		std::cerr << "Did not compute standard deviation correctly." << std::endl;
+    float sdev = st.computeSDev();	
+	if(sdev != 2.0f) {
+        std::cout << "STDV found: " << sdev << std::endl;
+		std::cerr << "Did not compute standard deviation correctly."
+            << std::endl;
 		return -1;
 	}
 
+    int mode = st.computeMode();
+    if(mode != 4) {
+        std::cout << "Mode found: " << mode << std::endl;
+        std::cerr << "Did not find correct mode." << std::endl;
+        return -1;
+    }
 
 	std::cout << "Now, to test this, add some data." << std::endl;
 	std::cout << "Eight elements:" << std:: endl;
@@ -69,8 +79,7 @@ int main(void){
 	std::cin >> st;
 	std::cout << st << std::endl;
 
-	st.loadData("dataset");
-	std::cout << st << std::endl;
+    
 	
 	return 0;
 }

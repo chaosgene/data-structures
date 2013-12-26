@@ -15,4 +15,3 @@ DynamicArray.o : DynamicArray.cpp
 
 clean:
 	rm -rf *.o $(OUTPUT_NAME1)
-
