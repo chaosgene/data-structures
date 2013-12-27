@@ -552,12 +552,12 @@ void Graph::minWeightComponent(std::string src) {
 			// Find the endpoint that is not visited
 			bool leftVisited = visited[((*currMinWeight)->
 							leftVertex)->id];
-			bool rightVisited = visited[((*currMinWeight)
-							->rightVertex)->id];
+		//	bool rightVisited = visited[((*currMinWeight)
+		//					->rightVertex)->id];
 			Vertex * unvisitedV;
 			if (leftVisited) {
 				unvisitedV = ((*currMinWeight)->rightVertex);
-			} else if (rightVisited) {
+			} else {
 				unvisitedV = ((*currMinWeight)->leftVertex);
 			}
 			// Remove from ens and store it in the answer array
@@ -575,7 +575,7 @@ void Graph::minWeightComponent(std::string src) {
                     ( visited[(newEL->rightVertex)->id]));
 				if (hasOneUnvisitedNeighb) {
 					ens.push_back(newEL);
-			  }
+			    }
 				Vertex * leftVertexPtr = newEL->leftVertex;
 				Vertex * rightVertexPtr = newEL->rightVertex;
 				if (!touchable[leftVertexPtr->id]) {

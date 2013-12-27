@@ -207,12 +207,12 @@ int main()
     // Number of connected components
     cout << endl << ". . . NUMCONNECTEDCOMPONENTS() . . ." << endl;
     g.printGraph();
-    cout << "How many components are there?" << g.numConnectedComponents()
+    cout << "How many components are there? " << g.numConnectedComponents()
         << endl;
     Graph gsw;
     gsw.readFromFile("test.graphs\\foograph.txt");
     gsw.printGraph();
-    cout << "How many components are there?" << gsw.numConnectedComponents()
+    cout << "How many components are there? " << gsw.numConnectedComponents()
         << endl;
     // Whether a graph is a tree
     cout << endl << ". . . ISTREE() . . ." << endl;
