@@ -7,5 +7,5 @@ Implementations of various data structures and algorithms using C++.
 
 Includes assignment course-work for Binghamton University in data structures and algorithms.
 
-*Following rules (Watson Academic Honesty Policy) apply for students and other members of Binghamton University.
-http://goo.gl/XvMLMi
+*Following [rules](http://goo.gl/XvMLMi) (Watson Academic Honesty Policy) apply for students and other members of Binghamton University.
+
